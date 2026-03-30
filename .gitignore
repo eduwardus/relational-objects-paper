@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Results (large files)
+results/*.json
+results/*.npy
+!results/.gitkeep
+
+# Data (optional)
+data/*.json
+!data/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
