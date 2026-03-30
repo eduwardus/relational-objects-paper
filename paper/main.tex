@@ -34,6 +34,12 @@ In contrast, the Madhyamaka Prāsaṅgika tradition formulates a radical claim: 
     \item such objects remain invariant under changes of observer,
     \item or whether they are intrinsically observer-dependent.
 \end{itemize}
+
+\paragraph{Scope and strategy.}
+This work does not attempt to formalize Madhyamaka philosophy directly. Instead, it constructs an explicit relational system and investigates whether object-like structures can arise and remain invariant across observational perspectives. The goal is to determine whether a Madhyamaka-like conclusion --- namely, the absence of intrinsically existing objects --- can emerge from purely structural and dynamical considerations, without presupposing any specific philosophical doctrine.
+
+This work is complementary to previous analyses that critically examine the logical assumptions of Madhyamaka reasoning from a scientific perspective.
+
 \section{Nature of the Work}
 
 This work does not aim to provide a complete formalization of any existing philosophical or physical theory. 
@@ -42,6 +48,7 @@ the possibility that what we understand as an ``object'' is an observer-dependen
 rather than an intrinsic entity.
 
 In this sense, the model should be understood as a formalized conceptual experiment.
+
 \section{Relational State Space}
 
 Let:
@@ -104,7 +111,7 @@ The construction is closely related to diffusion processes on data manifolds \ci
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.7\textwidth]{fig_pca_stationary.png}
+\includegraphics[width=0.7\textwidth]{figures/fig_pca_stationary.png}
 \caption{Stationary distribution $\pi$ projected onto the principal components of the feature space. The nearly uniform coloring indicates that no configuration is privileged under the purely relational dynamics.}
 \label{fig:stationary}
 \end{figure}
@@ -152,7 +159,7 @@ These regions correspond to stable configurations.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.7\textwidth]{fig_proto_objects.png}
+\includegraphics[width=0.7\textwidth]{figures/fig_proto_objects.png}
 \caption{Projection of all states (gray) and the stable region (red) for a representative observer. The concentration in a compact area shows that the observer perceives a well-defined ``proto-object'', though it will not be shared by other observers.}
 \label{fig:proto_objects}
 \end{figure}
@@ -174,7 +181,7 @@ Empirically:
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.7\textwidth]{fig_overlap_hist.png}
+\includegraphics[width=0.7\textwidth]{figures/fig_overlap_hist.png}
 \caption{Histogram of Jaccard overlaps between the stable regions of 200 randomly generated observers. The distribution is heavily concentrated near zero, confirming that different observers typically do not share a common ``reality''.}
 \label{fig:overlap_hist}
 \end{figure}
@@ -204,7 +211,7 @@ But bootstrap analysis yields:
 
 Contradiction.
 
-%\qed
+This result establishes that observer-invariant objecthood cannot be recovered as a fixed point of relational dynamics.
 
 \section{Observer Space Geometry}
 
@@ -228,7 +235,7 @@ The observed transition is analogous to percolation phenomena in random graphs \
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.7\textwidth]{fig_percolation.png}
+\includegraphics[width=0.7\textwidth]{figures/fig_percolation.png}
 \caption{Number of components and size of the largest component in the observer graph as a function of the overlap threshold $\tau$. The transition near $\tau \approx 0.2$ indicates that observers do not organize into stable families; instead, connectivity decays rapidly.}
 \label{fig:percolation}
 \end{figure}
@@ -287,10 +294,11 @@ on object individuation.
 While the model is not intended as a direct formalization of Madhyamaka philosophy, 
 it provides a constructive analogue of its central claim: 
 that apparent entities arise dependently and lack intrinsic identity \cite{nagarjuna, tsongkhapa}.
-
+This work is also related to previous analyses that critically examined the logical assumptions of Madhyamaka reasoning from a scientific perspective \cite{madhyamaka_critique}. While those analyses questioned the universality of Madhyamaka arguments, the present work adopts a constructive approach, identifying conditions under which Madhyamaka-like conclusions emerge from relational dynamics.
 \section{Reproducibility}
 
 All figures are generated from the same dataset and codebase, ensuring reproducibility of the reported phenomena.
+The full computational pipeline, including graph generation, Markov dynamics, and observer bootstrap analysis, is publicly available \cite{code_repo}.
 
 \section{Interpretation}
 
@@ -320,22 +328,65 @@ The model provides a constructive analogue of:
 
 These results resonate with classical Madhyamaka analyses of intrinsic existence \cite{nagarjuna, tsongkhapa}.
 
-\section{Conclusion}
+\section{Philosophical Implications: Madhyamaka Perspective}
 
-We have shown that:
+The results obtained in this work admit a natural interpretation in relation to classical Madhyamaka philosophy.
 
+\paragraph{Dependent origination.}
+In the model, proto-objects arise only through the interaction between relational structure and observer-dependent projections. They do not exist independently of these conditions. This mirrors the principle of dependent origination: phenomena arise only in dependence on causes, conditions, and conceptual imputation.
+
+\paragraph{Emptiness as non-invariance.}
+The absence of observer-invariant subsets provides a precise structural analogue of emptiness. In this context, emptiness does not imply non-existence, but rather the failure of any configuration to sustain identity across all observational frameworks.
+
+\paragraph{Object of negation.}
+The Madhyamaka ``object of negation'' --- an intrinsically existing entity --- corresponds, in this model, to a hypothetical subset invariant under all observers. The no-go theorem shows that no such subset exists. Thus, the object of negation can be identified with a mathematically well-defined but unrealizable structure.
+
+\paragraph{Two truths reinterpretation.}
+The model naturally supports a two-level description:
 \begin{itemize}
-    \item relational structure alone yields no objects,
-    \item observer structure induces apparent objects,
-    \item such objects are not invariant.
+    \item At the conventional level, proto-objects emerge and exhibit stability relative to specific observers.
+    \item At the ultimate level, no observer-independent entities exist.
 \end{itemize}
 
-Thus, the ``object of negation'' can be interpreted as:
+\paragraph{Non-reification.}
+Importantly, the model does not eliminate structure or regularity. Instead, it shows that stability is relational and context-dependent. This aligns with the Madhyamaka rejection of intrinsic nature without collapsing into nihilism.
 
-\begin{equation}
-\text{a non-invariant attractor in observer-dependent dynamics}
-\end{equation}
+These parallels suggest that Madhyamaka conclusions can be understood as statements about the structural limitations of relational systems, rather than as purely metaphysical claims.
 
+\section{Conclusion}
+
+We have constructed a fully relational dynamical system in which candidate objects are represented as graph structures evolving under similarity-based Markov dynamics.
+
+The results show that:
+
+\begin{itemize}
+    \item In the absence of observational structure, the system exhibits no privileged states.
+    \item Introducing observers induces stable proto-objects.
+    \item These proto-objects are robust within an observer but fail to be invariant across observers.
+\end{itemize}
+
+A no-go result establishes that no non-trivial subset of states remains invariant under all observers. Object-like structures therefore cannot be interpreted as intrinsic features of the system.
+
+From a philosophical perspective, this provides a constructive analogue of key Madhyamaka insights:
+
+\begin{itemize}
+    \item Phenomena arise dependently on relational and observational conditions.
+    \item Apparent stability does not imply intrinsic identity.
+    \item The search for inherently existing objects corresponds to a mathematically well-defined but unrealizable condition.
+\end{itemize}
+
+In this framework, the ``object of negation'' is not merely a philosophical abstraction, but a precise structural impossibility: an invariant attractor that cannot exist in a relational system.
+
+More broadly, the results suggest that objecthood should be understood as an emergent, observer-dependent phenomenon, rather than a fundamental feature of reality. This shifts the problem of ontology toward the study of relational structures, invariance, and the limits of identifiability.
+
+The model thus bridges philosophical analysis and formal construction, showing that the absence of intrinsic existence can arise as a rigorous consequence of relational dynamics.
+\section{Code and Data Availability}
+
+All code, datasets, and scripts used to generate the results in this work are publicly available at:
+
+\begin{center}
+\url{https://github.com/eduwardus/relational-objects-paper}
+\end{center}
 \bibliographystyle{plain}
 \bibliography{references}
 
